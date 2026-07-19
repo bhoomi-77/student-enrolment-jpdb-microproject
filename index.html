@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCHOOL-DB · Student Enrollment</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page-head">
+    <div class="eyebrow">SCHOOL&#8209;DB &nbsp;·&nbsp; STUDENT&#8209;TABLE</div>
+    <h1>Student Enrollment Form</h1>
+    <div class="sub">Enter a Roll No. to begin — new or existing record, detected automatically.</div>
+  </header>
+
+  <div class="card">
+    <div class="punch"></div>
+    <div class="stamp" id="stamp">New Entry</div>
+
+    <div class="field pk" id="f-rollNo">
+      <label for="rollNo">Roll No. <span aria-hidden="true">(primary key)</span></label>
+      <input id="rollNo" type="text" autocomplete="off" placeholder="e.g. R-2026-001">
+      <div class="hint" id="h-rollNo">Type a roll number, then tab or click away to check.</div>
+    </div>
+
+    <div class="field" id="f-fullName">
+      <label for="fullName">Full Name</label>
+      <input id="fullName" type="text" disabled placeholder="Full name">
+      <div class="hint" id="h-fullName"></div>
+    </div>
+
+    <div class="field" id="f-className">
+      <label for="className">Class</label>
+      <input id="className" type="text" disabled placeholder="e.g. 10-B">
+      <div class="hint" id="h-className"></div>
+    </div>
+
+    <div class="field" id="f-birthDate">
+      <label for="birthDate">Birth Date</label>
+      <input id="birthDate" type="date" disabled>
+      <div class="hint" id="h-birthDate"></div>
+    </div>
+
+    <div class="field" id="f-address">
+      <label for="address">Address</label>
+      <textarea id="address" disabled placeholder="Residential address"></textarea>
+      <div class="hint" id="h-address"></div>
+    </div>
+
+    <div class="field" id="f-enrollmentDate">
+      <label for="enrollmentDate">Enrollment Date</label>
+      <input id="enrollmentDate" type="date" disabled>
+      <div class="hint" id="h-enrollmentDate"></div>
+    </div>
+
+    <div class="actions">
+      <button id="btnSave" disabled>Save</button>
+      <button id="btnUpdate" disabled>Update</button>
+      <button id="btnReset" disabled>Reset</button>
+    </div>
+  </div>
+
+  <button class="drawer-toggle" id="drawerToggle">Browse all enrolled students ▾</button>
+  <div class="drawer" id="drawer">
+    <div class="drawer-inner">
+      <h3>STUDENT-TABLE records</h3>
+      <table>
+        <thead><tr><th>Roll No.</th><th>Name</th><th>Class</th></tr></thead>
+        <tbody id="recordsBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
